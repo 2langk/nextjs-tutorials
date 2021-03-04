@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next';
+import Link from 'next/link';
 import Layout from '../components/Layout';
 
 interface Props {
@@ -13,13 +14,26 @@ interface Props {
 const IndexPage: NextPage<Props> = ({ launch }) => {
 	const date = new Date(launch.timestamp);
 	return (
-		<Layout keywords="sdasdas">
-			<main>
+		<Layout title="index" keywords="sdasdas">
+			<>
 				<h1>Next SpaceX Launch: {launch.mission}</h1>
 				<p>
 					{launch.rocket} will take off from {launch.site} on {date.toDateString()}
 				</p>
-			</main>
+			</>
+			<div>
+				<Link href="/todo">
+					<a style={{ margin: '2rem' }} href="#">
+						See Todos
+					</a>
+				</Link>
+
+				<Link href="/meet">
+					<a style={{ margin: '2rem' }} href="#">
+						See Meet
+					</a>
+				</Link>
+			</div>
 		</Layout>
 	);
 };
