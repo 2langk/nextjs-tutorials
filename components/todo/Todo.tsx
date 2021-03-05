@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useState } from 'react';
 import Modal from './Modal';
-import styles from '../../styles/Todo.module.css';
+import styles from './Todo.module.css';
 
 interface Props {
 	id: number;

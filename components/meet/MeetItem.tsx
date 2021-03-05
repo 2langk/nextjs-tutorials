@@ -16,6 +16,7 @@ const MeetItem: React.VFC<Props> = ({ meet }) => {
 	const { likes, setLikes } = useContext(LikesContext);
 
 	const isLike = likes.includes(meet.id);
+
 	const likeHandler = () => {
 		if (isLike) {
 			setLikes((prev) => prev.filter((item) => item !== meet.id));
@@ -23,6 +24,7 @@ const MeetItem: React.VFC<Props> = ({ meet }) => {
 			setLikes((prev) => [...prev, meet.id]);
 		}
 	};
+
 	return (
 		<>
 			<div className={styles.item}>
